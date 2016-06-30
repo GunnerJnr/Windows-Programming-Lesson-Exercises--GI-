@@ -5,4 +5,4 @@ Simple Win32 Program that displays a message box to the user. The code it is wri
 
 Here is a screen shot of the result
 
-![Win32 Message Box](/images/Win32_Message_Box.png)
+![Win32 Message Box](images/Win32_Message_Box.png)
