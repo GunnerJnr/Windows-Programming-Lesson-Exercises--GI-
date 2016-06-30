@@ -5,22 +5,20 @@ HWND ghMainWnd = 0;
 HINSTANCE ghAppInst = 0;
 
 // Step 1: Define and implement the window procedure.
-LRESULT CALLBACK
-
-WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch (msg)
 	{
-		// Handle left mouse button click message.
+	// Handle left mouse button click message.
 	case WM_LBUTTONDOWN:
 		MessageBox(0, "WM_LBUTTONDOWN message.", "Msg", MB_OK);
 		return 0;
-		// Handle key down message.
+	// Handle key down message.
 	case WM_KEYDOWN:
 		if (wParam == VK_ESCAPE)
 			DestroyWindow(ghMainWnd);
 		return 0;
-		// Handle destroy window message.
+	// Handle destroy window message.
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		return 0;
@@ -31,9 +29,7 @@ WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 }
 
 // WinMain: Entry point for a Windows application.
-int WINAPI
-WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
-	PSTR cmdLine, int showCmd)
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR cmdLine, int showCmd)
 {
 	// Save handle to application instance.
 	ghAppInst = hInstance;
@@ -56,8 +52,7 @@ WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	// Step 4: Create the window, and save handle in globla
 	// window handle variable ghMainWnd.
-	ghMainWnd = ::CreateWindow("MyWndClassName", "MyWindow",
-		WS_OVERLAPPEDWINDOW, 0, 0, 500, 500, 0, 0, ghAppInst, 0);
+	ghMainWnd = ::CreateWindow("MyWndClassName", "MyWindow", WS_OVERLAPPEDWINDOW, 0, 0, 500, 500, 0, 0, ghAppInst, 0);
 
 	if (ghMainWnd == 0)
 	{
